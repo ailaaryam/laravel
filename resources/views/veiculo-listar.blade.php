@@ -26,7 +26,7 @@
                 <td>{{ $veiculo->placa }}</td>
                 <td>{{ $veiculo->cor }}</td>
                 <td>
-					<a href="/veiculo/remove/{{ $veiculo->id }}">Excluir</a>
+					<a href="/veiculo/remover/{{ $veiculo->id }}">Excluir</a>
                     <a href="{{ route('veiculo-editar', $veiculo->id)}}">Atualizar</a>
                 </td>
             </tr>

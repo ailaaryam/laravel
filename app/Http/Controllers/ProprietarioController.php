@@ -12,12 +12,25 @@ class ProprietarioController extends Controller
     }
 
     function store(Request $dados){
-        $proprietario = new ProprietarioModel();
-        $proprietario->create($dados->all());
+        if ($dados->id == '') {
+            //fazemos ação de create aqui...
+            $proprietario = new ProprietarioModel();
+            $proprietario->create($dados->all());
+        } else {
+            //fazemos a ação de update aqui
+            $proprietario = ProprietarioModel::find($dados->id); //localiza o registro
+            $update = $proprietario->update($dados->all()); //atualiza
+        }
+        
+        //recupera todos os registros atualizados
+        $proprietario = ProprietarioModel::all();
+        
+        //após adicionar ou editar redireciona para a página listar
+        return view('proprietario-listar', ['proprietario'=>$proprietario ]);
     }
 
     function listar(){
-        $proprietarios = ProprietarioModel::all();
+        $proprietario = ProprietarioModel::all();
         return view('proprietario-listar', ['proprietario'=>$proprietario ]);
     }
 

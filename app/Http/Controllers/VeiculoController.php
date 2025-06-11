@@ -12,8 +12,21 @@ class VeiculoController extends Controller
     }
 
     function store(Request $dados){
-        $veiculo = new VeiculoModel();
-        $veiculo->create($dados->all());
+        if ($dados->id == '') {
+            //fazemos ação de create aqui...
+            $veiculo = new VeiculoModel();
+            $veiculo->create($dados->all());
+        } else {
+            //fazemos a ação de update aqui
+            $veiculo = VeiculoModel::find($dados->id); //localiza o registro
+            $update = $veiculo->update($dados->all()); //atualiza
+        }
+        
+        //recupera todos os registros atualizados
+        $veiculos = VeiculoModel::all();
+        
+        //após adicionar ou editar redireciona para a página listar
+        return view('veiculo-listar', ['veiculos'=>$veiculos]);
     }
 
     function listar(){
@@ -22,12 +35,12 @@ class VeiculoController extends Controller
     }
 
     function remover($id){
-        VeiculoModel::destroy($id);
+        $veiculo = VeiculoModel::destroy($id);
         return redirect()->route('veiculo-listar');
     }
 
     function editar($id){
-        $veiculo = VeiculoModel::find($sid);
+        $veiculo = VeiculoModel::find($id);
         return view('veiculo-formulario', ['veiculo' => $veiculo]);
     }
 }
