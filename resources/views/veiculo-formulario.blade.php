@@ -1,5 +1,6 @@
 <form action="{{ route('veiculo-store') }}" method="post">
     @csrf
+
     <label for="marca">Marca</label>
     <input type="text" name="marca" id="marca">
 

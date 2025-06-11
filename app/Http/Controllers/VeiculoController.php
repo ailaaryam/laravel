@@ -18,7 +18,7 @@ class VeiculoController extends Controller
 
     function listar(){
          $veiculos = VeiculoModel::all();
-        return view('veiculo-listar', ['veiculos'=>$vaiculos ]);
+        return view('veiculo-listar', ['veiculos'=>$veiculos ]);
     }
 
     function remover($id){
