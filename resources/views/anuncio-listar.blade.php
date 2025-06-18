@@ -24,7 +24,7 @@
                 <td>{{ $anuncio->preco }}</td>
                 <td>{{ $anuncio->data_publicacao }}</td>
                 <td>
-					<a href="/veiculo/remove/{{ $anuncio->id }}">Excluir</a>
+					<a href="/veiculo/remover/{{ $anuncio->id }}">Excluir</a>
                     <a href="{{ route('anuncio-editar', $anuncio->id)}}">Atualizar</a>
                 </td>
             </tr>

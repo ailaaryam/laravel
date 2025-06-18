@@ -24,7 +24,7 @@
                 <td>{{ $proprietario->telefone }}</td>
                 <td>{{ $proprietario->email }}</td>
                 <td>
-					<a href="/veiculo/remove/{{ $proprietario->id }}">Excluir</a>
+					<a href="/veiculo/remover/{{ $proprietario->id }}">Excluir</a>
                     <a href="{{ route('propritario-editar', $proprietario->id)}}">Atualizar</a>
                 </td>
             </tr>
