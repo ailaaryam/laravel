@@ -12,6 +12,7 @@
             <th>Descrição</th>
             <th>Preço</th>
             <th>Data de publicação</th>
+            <th>Cor</th>
             <th>Ações</th>
         </tr>
     </thead>
@@ -23,9 +24,10 @@
                 <td>{{ $anuncio->descricao }}</td>
                 <td>{{ $anuncio->preco }}</td>
                 <td>{{ $anuncio->data_publicacao }}</td>
+                <td>{{ $anuncio->cor }}</td>
                 <td>
-					<a href="/veiculo/remover/{{ $anuncio->id }}">Excluir</a>
-                    <a href="{{ route('anuncio-editar', $anuncio->id)}}">Atualizar</a>
+					<a href="/anuncio/remover/{{ $anuncio->id }}">Excluir</a>
+                    <a href="/anuncio/editar/{{ $anuncio->id }}">Atualizar</a>
                 </td>
             </tr>
         @endforeach

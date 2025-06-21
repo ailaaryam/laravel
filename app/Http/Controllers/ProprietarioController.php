@@ -23,24 +23,24 @@ class ProprietarioController extends Controller
         }
         
         //recupera todos os registros atualizados
-        $proprietario = ProprietarioModel::all();
+        $proprietarios = ProprietarioModel::all();
         
         //após adicionar ou editar redireciona para a página listar
-        return view('proprietario-listar', ['proprietario'=>$proprietario ]);
+        return view('proprietario-listar', ['proprietarios'=>$proprietarios]);
     }
 
     function listar(){
-        $proprietario = ProprietarioModel::all();
-        return view('proprietario-listar', ['proprietario'=>$proprietario ]);
+         $proprietarios = ProprietarioModel::all();
+        return view('proprietario-listar', ['proprietarios'=>$proprietarios ]);
     }
 
     function remover($id){
-       ProprietarioModel::destroy($id);
+        $proprietario = ProprietarioModel::destroy($id);
         return redirect()->route('proprietario-listar');
     }
 
     function editar($id){
-        $proprietario = ProprietarioModel::find($sid);
+        $proprietario = ProprietarioModel::find($id);
         return view('proprietario-formulario', ['proprietario' => $proprietario]);
     }
 }

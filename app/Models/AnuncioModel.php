@@ -8,6 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class AnuncioModel extends Model
 {
     use HasFactory;
-    protected $table = 'veiculo';
-    protected $fillable = ['id', 'marca', 'modelo', 'ano', 'placa','cor' ];
+    protected $table = 'anuncio';
+    protected $fillable = ['id', 'titulo', 'descricao', 'preco', 'data_publicacao','cor'];
 }

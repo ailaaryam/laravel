@@ -16,7 +16,7 @@
         </tr>
     </thead>
     <tbody>
-        @foreach ($proprietarios as proprietario)
+         @foreach ($proprietarios as $proprietario)
             <tr>
                 <td>{{ $proprietario->id }}</td>
                 <td>{{ $proprietario->nome }}</td>
@@ -24,8 +24,8 @@
                 <td>{{ $proprietario->telefone }}</td>
                 <td>{{ $proprietario->email }}</td>
                 <td>
-					<a href="/veiculo/remover/{{ $proprietario->id }}">Excluir</a>
-                    <a href="{{ route('propritario-editar', $proprietario->id)}}">Atualizar</a>
+					<a href="/proprietario/remover/{{ $proprietario->id }}">Excluir</a>
+                    <a href="/proprietario/editar/{{ $proprietario->id }}">Atualizar</a>
                 </td>
             </tr>
         @endforeach

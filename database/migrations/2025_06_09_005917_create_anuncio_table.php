@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('data_publicacao', 255);
             $table->string('cor', 255);
         });
+
     }
 
     /**

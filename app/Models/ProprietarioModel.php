@@ -8,6 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class ProprietarioModel extends Model
 {
     use HasFactory;
-    protected $table = 'veiculo';
-    protected $fillable = ['id', 'marca', 'modelo', 'ano', 'placa','cor' ];
+    protected $table = 'proprietario';
+    protected $fillable = ['id', 'nome', 'cpf', 'telefone', 'email'];
 }

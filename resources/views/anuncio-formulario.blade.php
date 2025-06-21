@@ -14,5 +14,8 @@
     <label for="data_publicacao">Data da publicação:</label>
     <input type="text" name="data_publicacao" id="data_publicacao" value={{$anuncio->data_publicacao ?? old('data_publicacao')}}>
 
+    <label for="cor">Cor</label>
+    <input type="text" name="cor" id="cor" value={{$anuncio->cor ?? old('cor')}}>
+
     <button type="submit">Cadastrar</button>
 </form>

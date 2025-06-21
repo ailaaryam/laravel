@@ -19,7 +19,9 @@ return new class extends Migration
             $table->string('telefone', 255);
             $table->string('email', 255);
         });
+
     }
+
 
     /**
      * Reverse the migrations.
