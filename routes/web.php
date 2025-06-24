@@ -13,6 +13,8 @@ use App\Http\Middleware\LogAcessoMiddleware;
 |
 */
 
+Route::get('/', [App\Http\Controllers\InicioController::class, 'inicio'])->name('inicio');
+
 Route::get('/veiculo/formulario', [App\Http\Controllers\VeiculoController::class, 'formulario'])->name('veiculo-formulario');
 Route::post('/veiculo/store', [App\Http\Controllers\VeiculoController::class, 'store'])->name('veiculo-store');
 Route::get('/veiculo/listar', [App\Http\Controllers\VeiculoController::class, 'listar'])->name('veiculo-listar');
