@@ -1,3 +1,6 @@
+
+
+
 <form action="{{ route('anuncio-store') }}" method="post">
     @csrf
     <input type="hidden" name="id" value={{$anuncio->id ?? old('id')}}>
