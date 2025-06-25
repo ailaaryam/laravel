@@ -1,22 +1,38 @@
-<form action="{{ route('veiculo-store') }}" method="post">
+@extends('_partials/body')
+
+@section('conteudo')
+
+<form action="{{ route('veiculo-store') }}" method="post" class="container mt-4" style="max-width: 500px;">
     @csrf
 
-    <input type="hidden" name="id" value={{$veiculo->id ?? old('id')}}>
+    <input type="hidden" name="id" value="{{ $veiculo->id ?? old('id') }}">
 
-    <label for="marca">Marca</label>
-    <input type="text" name="marca" id="marca" value={{ $veiculo->marca ?? old('marca')}}>
+    <div class="mb-3">
+        <label for="marca" class="form-label fw-semibold">Marca</label>
+        <input type="text" name="marca" id="marca" value="{{ $veiculo->marca ?? old('marca') }}" class="form-control" placeholder="Digite a marca">
+    </div>
 
-    <label for="modelo">Modelo</label>
-    <input type="text" name="modelo" id="modelo" value={{ $veiculo->marca ?? old('modelo')}}>
+    <div class="mb-3">
+        <label for="modelo" class="form-label fw-semibold">Modelo</label>
+        <input type="text" name="modelo" id="modelo" value="{{ $veiculo->modelo ?? old('modelo') }}" class="form-control" placeholder="Digite o modelo">
+    </div>
 
-    <label for="ano">ano</label>
-    <input type="text" name="ano" id="ano" value={{ $veiculo->marca ?? old('ano')}}>
+    <div class="mb-3">
+        <label for="ano" class="form-label fw-semibold">Ano</label>
+        <input type="text" name="ano" id="ano" value="{{ $veiculo->ano ?? old('ano') }}" class="form-control" placeholder="Digite o ano">
+    </div>
 
-    <label for="placa">Placa</label>
-    <input type="text" name="placa" id="placa" value={{ $veiculo->marca ?? old('placa')}}>
+    <div class="mb-3">
+        <label for="placa" class="form-label fw-semibold">Placa</label>
+        <input type="text" name="placa" id="placa" value="{{ $veiculo->placa ?? old('placa') }}" class="form-control" placeholder="Digite a placa">
+    </div>
 
-    <label for="cor">Cor</label>
-    <input type="text" name="cor" id="cor" value={{ $veiculo->marca ?? old('cor')}}>
+    <div class="mb-4">
+        <label for="cor" class="form-label fw-semibold">Cor</label>
+        <input type="text" name="cor" id="cor" value="{{ $veiculo->cor ?? old('cor') }}" class="form-control" placeholder="Digite a cor">
+    </div>
 
-    <button type="submit">Cadastrar</button>
+    <button type="submit" class="btn btn-primary w-100">Cadastrar</button>
 </form>
+
+@endsection

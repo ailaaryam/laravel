@@ -1,33 +1,36 @@
-<style>
-    * {
-        outline: 1px solid #a3a3a3;
-    }
-</style>
+@extends('_partials/body')
 
-<table>
-    <thead>
-        <tr>
-            <th>Código</th>
-            <th>Nome</th>
-            <th>CPF</th>
-            <th>telefone</th>
-            <th>E-mail</th>
-            <th>Ações</th>
-        </tr>
+@section('conteudo')
+
+<div class="container mt-5">
+  <table class="table table-striped table-hover table-bordered">
+    <thead class="table-primary text-white">
+      <tr>
+        <th>Código</th>
+        <th>Nome</th>
+        <th>CPF</th>
+        <th>Telefone</th>
+        <th>E-mail</th>
+        <th>Ações</th>
+      </tr>
     </thead>
     <tbody>
-         @foreach ($proprietarios as $proprietario)
-            <tr>
-                <td>{{ $proprietario->id }}</td>
-                <td>{{ $proprietario->nome }}</td>
-                <td>{{ $proprietario->cpf }}</td>
-                <td>{{ $proprietario->telefone }}</td>
-                <td>{{ $proprietario->email }}</td>
-                <td>
-					<a href="/proprietario/remover/{{ $proprietario->id }}">Excluir</a>
-                    <a href="/proprietario/editar/{{ $proprietario->id }}">Atualizar</a>
-                </td>
-            </tr>
-        @endforeach
+      @foreach ($proprietarios as $proprietario)
+        <tr>
+          <td>{{ $proprietario->id }}</td>
+          <td>{{ $proprietario->nome }}</td>
+          <td>{{ $proprietario->cpf }}</td>
+          <td>{{ $proprietario->telefone }}</td>
+          <td>{{ $proprietario->email }}</td>
+          <td>
+            <a href="/proprietario/remover/{{ $proprietario->id }}" class="btn btn-sm btn-outline-danger me-2">Excluir</a>
+            <a href="/proprietario/editar/{{ $proprietario->id }}" class="btn btn-sm btn-outline-primary">Atualizar</a>
+          </td>
+        </tr>
+      @endforeach
     </tbody>
-</table>
+  </table>
+</div>
+
+
+@endsection

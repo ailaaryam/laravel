@@ -1,4 +1,5 @@
-
+@extends('_partials/body')
+@section('conteudo')
 
 <div class="container py-5">
     <div class="text-center mb-5">
@@ -70,3 +71,4 @@
         </div>
     </div>
 </div>
+@endsection

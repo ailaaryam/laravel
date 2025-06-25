@@ -1,19 +1,33 @@
-<form action="{{ route('proprietario-store') }}" method="post">
+@extends('_partials/body')
+
+@section('conteudo')
+
+<form action="{{ route('proprietario-store') }}" method="post" class="container mt-5" style="max-width: 500px;">
     @csrf
 
-    <input type="hidden" name="id" value={{$proprietario->id ?? old('id')}}>
+    <input type="hidden" name="id" value="{{ $proprietario->id ?? old('id') }}">
 
-    <label for="nome">Nome:</label>
-    <input type="text" name="nome" id="nome" value={{ $proprietario->nome ?? old('nome')}}>
+    <div class="mb-4">
+        <label for="nome" class="form-label fw-semibold">Nome:</label>
+        <input type="text" name="nome" id="nome" value="{{ $proprietario->nome ?? old('nome') }}" class="form-control" placeholder="Digite seu nome">
+    </div>
 
-    <label for="cpf">CPF:</label>
-    <input type="text" name="cpf" id="cpf" value={{ $proprietario->cpf ?? old('cpf')}}>
+    <div class="mb-4">
+        <label for="cpf" class="form-label fw-semibold">CPF:</label>
+        <input type="text" name="cpf" id="cpf" value="{{ $proprietario->cpf ?? old('cpf') }}" class="form-control" placeholder="Digite seu CPF">
+    </div>
 
-    <label for="telefone">Telefone:</label>
-    <input type="text" name="telefone" id="telefone" value={{ $proprietario->telefone ?? old('telefone')}}>
+    <div class="mb-4">
+        <label for="telefone" class="form-label fw-semibold">Telefone:</label>
+        <input type="text" name="telefone" id="telefone" value="{{ $proprietario->telefone ?? old('telefone') }}" class="form-control" placeholder="Digite seu telefone">
+    </div>
 
-    <label for="email">E-mail:</label>
-    <input type="text" name="email" id="email" value={{ $proprietario->email ?? old('email')}}>
+    <div class="mb-4">
+        <label for="email" class="form-label fw-semibold">E-mail:</label>
+        <input type="text" name="email" id="email" value="{{ $proprietario->email ?? old('email') }}" class="form-control" placeholder="Digite seu e-mail">
+    </div>
 
-    <button type="submit">Cadastrar</button>
+    <button type="submit" class="btn btn-success w-100">Cadastrar</button>
 </form>
+
+@endsection

@@ -1,35 +1,37 @@
-<style>
-    * {
-        outline: 1px solid #a3a3a3;
-    }
-</style>
+@extends('_partials/body')
 
-<table>
-    <thead>
-        <tr>
-            <th>Código</th>
-            <th>Marca</th>
-            <th>Modelo</th>
-            <th>Ano</th>
-            <th>Placa</th>
-            <th>Cor</th>
-            <th>Ações</th>
-        </tr>
+@section('conteudo')
+
+<div class="container mt-5">
+  <table class="table table-striped table-hover table-bordered">
+    <thead class="table-primary text-white">
+      <tr>
+        <th>Código</th>
+        <th>Marca</th>
+        <th>Modelo</th>
+        <th>Ano</th>
+        <th>Placa</th>
+        <th>Cor</th>
+        <th>Ações</th>
+      </tr>
     </thead>
     <tbody>
-        @foreach ($veiculos as $veiculo)
-            <tr>
-                <td>{{ $veiculo->id }}</td>
-                <td>{{ $veiculo->marca }}</td>
-                <td>{{ $veiculo->modelo }}</td>
-                <td>{{ $veiculo->ano }}</td>
-                <td>{{ $veiculo->placa }}</td>
-                <td>{{ $veiculo->cor }}</td>
-                <td>
-					<a href="/veiculo/remover/{{ $veiculo->id }}">Excluir</a>
-                    <a href="/veiculo/editar/{{ $veiculo->id }}">Atualizar</a>
-                </td>
-            </tr>
-        @endforeach
+      @foreach ($veiculos as $veiculo)
+        <tr>
+          <td>{{ $veiculo->id }}</td>
+          <td>{{ $veiculo->marca }}</td>
+          <td>{{ $veiculo->modelo }}</td>
+          <td>{{ $veiculo->ano }}</td>
+          <td>{{ $veiculo->placa }}</td>
+          <td>{{ $veiculo->cor }}</td>
+          <td>
+            <a href="/veiculo/remover/{{ $veiculo->id }}" class="btn btn-sm btn-outline-danger me-2">Excluir</a>
+            <a href="/veiculo/editar/{{ $veiculo->id }}" class="btn btn-sm btn-outline-primary">Atualizar</a>
+          </td>
+        </tr>
+      @endforeach
     </tbody>
-</table>
+  </table>
+</div>
+
+@endsection
