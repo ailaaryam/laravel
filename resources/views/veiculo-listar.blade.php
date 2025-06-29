@@ -32,6 +32,7 @@
       @endforeach
     </tbody>
   </table>
+  <a href="/" class="btn btn-sm btn-outline-primary">Voltar para a pagina principal</a>
 </div>
 
 @endsection

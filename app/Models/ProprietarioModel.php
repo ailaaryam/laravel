@@ -10,9 +10,4 @@ class ProprietarioModel extends Model
     use HasFactory;
     protected $table = 'proprietario';
     protected $fillable = ['id', 'nome', 'cpf', 'telefone', 'email'];
-
-    public function anuncios()
-    {
-        return $this->hasMany(AnuncioModel::class, 'id_proprietario');
-    }
 }

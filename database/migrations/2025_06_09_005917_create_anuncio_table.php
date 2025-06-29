@@ -19,20 +19,6 @@ return new class extends Migration
             $table->string('preco', 255);
             $table->string('data_publicacao', 255);
             $table->string('cor', 255);
-
-            $table->unsignedBigInteger('id_proprietario');
-            $table->unsignedBigInteger('id_veiculo');
-            
-            
-            $table->foreign('id_proprietario')
-            ->references('id')->on('proprietario')
-            ->onDelete('cascade');
-
-            $table->foreign('id_veiculo')
-            ->references('id')->on('veiculo')
-            ->onDelete('cascade');
-
-            $table->unique('id_veiculo');
         });
 
     }
