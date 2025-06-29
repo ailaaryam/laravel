@@ -33,6 +33,8 @@
     </div>
 
     <button type="submit" class="btn btn-primary w-100">Cadastrar</button>
+    <p></p>
+    <a href="/" class="btn btn-primary w-100">Voltar para a pagina principal</a>
 </form>
 
 @endsection

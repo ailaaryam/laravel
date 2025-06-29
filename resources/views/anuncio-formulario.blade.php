@@ -41,7 +41,9 @@
                            value="{{ $anuncio->cor ?? old('cor') }}">
                 </div>
 
-                <button type="submit" class="btn btn-success w-100">Cadastrar</button>
+                <button type="submit" class="btn btn-info w-100 text-white">Cadastrar</button>
+                <p></p>
+                <a href="/" class="btn btn-info w-100 text-white">Voltar para a pagina principal</a>
             </form>
         </div>
     </div>

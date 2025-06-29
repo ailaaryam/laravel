@@ -28,6 +28,8 @@
     </div>
 
     <button type="submit" class="btn btn-success w-100">Cadastrar</button>
+    <p></p>
+    <a href="/" class="btn btn-success w-100">Voltar para a pagina principal</a>
 </form>
 
 @endsection
