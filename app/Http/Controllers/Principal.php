@@ -10,7 +10,5 @@ class Principal extends Controller
         echo 'Página Principal';
     }
 
-    function dizerOla(){
-        echo 'Ola! Como vai?';
-    }
+    
 }
